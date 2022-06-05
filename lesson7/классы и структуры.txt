@@ -1,0 +1,2 @@
+Random - класс
+int, double, string - структура
