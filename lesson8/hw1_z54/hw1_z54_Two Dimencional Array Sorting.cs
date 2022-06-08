@@ -26,23 +26,31 @@ void FillArray(int[,] matr) // метод, который заполняет м�
     }
 }
 
-void FirstLastReplacement(int[,] matr) // метод, который меняет местами первую и последнюю строчку
+void SortingRowsArray(int[,] matr)
 {
-    int[] temp = new int [matr.GetLength(1)];
-    var i = 0;
-    for (int j = 0; j < matr.GetLength(1); j++)
+    var temp = matr[0, 0];
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        temp [j] = matr [i,j];
-    }
+        int max = matr[i, 0];
+        for (int j = 0; j < matr.GetLength(1); j++)
+        {
+            for (int k = j + 1; k < matr.GetLength(1); k++)
+                if (matr[i, j] > matr[i,k])
+                {
+                    temp = matr[i, k];
+                    matr[i,k] = matr[i,j];
+                    matr[i,j] = temp;
+                }
 
-    for (int j = 0; j < matr.GetLength(1); j++)
-    {
-        matr [0,j] = matr [matr.GetLength(0) - 1,j];
-        matr [matr.GetLength(0) - 1, j] = temp [j];
+        }
+
     }
 }
 
 
 int[,] matrix = new int[3, 4];
 FillArray(matrix);
+PrintArray(matrix);
+Console.WriteLine();
+SortingRowsArray(matrix);
 PrintArray(matrix);
