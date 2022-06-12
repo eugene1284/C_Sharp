@@ -18,11 +18,12 @@ void PrintArray(int[,] matr) // метод, который печатает ма
 
 void FillArray(int[,] matr) // метод, который заполняет массив случайными числами от 1 до 9
 {
+    Random rnd = new Random();
     for (int i = 0; i < matr.GetLength(0); i++)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            matr[i, j] = new Random().Next(1, 10); // [1,10)
+            matr[i, j] = rnd.Next(1, 10); // [1,10)
         }
     }
 }
