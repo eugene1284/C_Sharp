@@ -12,8 +12,7 @@ class Program
         public int i;
         public int j;
     }
-
-    static int NumberInput(string text)//Метод ввода и проверки на число
+    static int StaticNumberInput(string text)//Метод ввода и проверки на число
     {
         bool isInputInt = true;
         int number = 0;
@@ -38,8 +37,8 @@ class Program
 
     static void Main(string[] args)
     {
-        int n = NumberInput("кол-во строк");
-        int m = NumberInput("кол-во столбцов");
+        int n = StaticNumberInput("кол-во строк");
+        int m = StaticNumberInput("кол-во столбцов");
 
         int[,] array = new int[n, m];
         Direction direct = new Direction() { i = 0, j = 1 };
